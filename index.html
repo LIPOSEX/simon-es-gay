@@ -25,6 +25,7 @@
     .buttons {
       display: flex;
       gap: 1rem;
+      position: relative;
     }
 
     button {
@@ -43,7 +44,6 @@
     #no {
       background-color: red;
       color: white;
-      position: absolute;
     }
   </style>
 </head>
@@ -59,6 +59,9 @@
     const yesButton = document.getElementById('yes');
 
     noButton.addEventListener('mouseenter', () => {
+      // Cambiar a posición absoluta sólo cuando se mueve
+      noButton.style.position = 'absolute';
+
       const maxX = window.innerWidth - noButton.offsetWidth;
       const maxY = window.innerHeight - noButton.offsetHeight;
 
